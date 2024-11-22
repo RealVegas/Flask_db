@@ -1,6 +1,7 @@
 pip>=24.2
-setuptools>=75.2.0
 wheel>=0.44.0
+setuptools>=75.2.0
+email-validator~=2.2.0
 Flask~=3.0.3
 WTForms~=3.2.1
 Flask-WTF~=1.2.2
