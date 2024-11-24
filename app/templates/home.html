@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 
 {% block title %}
-Home
+Главная
 {% endblock %}
 
 {% block content %}
     <h1>Добро пожаловать на домашнюю страницу!</h1>
+    <h3>Ваш аккаунт: {{ current_user.username }}</h3>
+    <h3>Ваша эл. почта: {{ current_user.email }}</h3>
 {% endblock %}
