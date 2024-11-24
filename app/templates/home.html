@@ -6,6 +6,8 @@
 
 {% block content %}
     <h1>Добро пожаловать на домашнюю страницу!</h1>
-    <h3>Ваш аккаунт: {{ current_user.username }}</h3>
-    <h3>Ваша эл. почта: {{ current_user.email }}</h3>
+    {% if current_user.is_authenticated %}
+        <h3>Ваше имя: {{ current_user.username }}</h3>
+        <h3>Ваша эл. почта: {{ current_user.email }}</h3>
+    {% endif %}
 {% endblock %}
