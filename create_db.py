@@ -1,7 +1,6 @@
 from app import db, app
-from app.models import User
-
 
 with app.app_context():
-    db.create_all()
-
+    inspector = db.inspect(db.engine)
+    if 'user' not in inspector.get_table_names():
+        db.create_all()
