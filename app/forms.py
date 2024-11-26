@@ -22,6 +22,15 @@ class RegistrationForm(FlaskForm):
             raise ValidationError('Такая эл. почта уже используется')
 
 
+class UpdateForm(FlaskForm):
+    username = StringField('Изменить имя пользователя', validators=[DataRequired(), Length(min=2, max=35)])
+    email = StringField('Изменить E-mail', validators=[DataRequired(), Email()])
+    password = PasswordField('Введите новый пароль', validators=[DataRequired()])
+    confirm_password = PasswordField('Подтвердите новый пароль', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Сохранить изменения')
+    not_submit = SubmitField('Отменить изменения')
+
+
 class LoginForm(FlaskForm):
     email = StringField('E-mail', validators=[DataRequired(), Email()])
     password = PasswordField('Пароль', validators=[DataRequired()])

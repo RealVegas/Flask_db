@@ -1,29 +1,37 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 
 {% block title %}
 Вход
 {% endblock %}
 
 {% block content %}
-<h1>Вход</h1>
+<p class="page-title">Вход</p>
 <form method="post" action="{{ url_for('login') }}">
-        {{ form.hidden_tag() }}
-        <div>
-            {{ form.email.label }}
-            {{ form.email(size=32) }}
+    {{ form.hidden_tag() }}
+    <div class="mb-3 row">
+        {{ form.email.label(for="email", class="col-sm-2 col-form-label") }}
+        <div class="col-sm-auto">
+            {{ form.email(class="form-control", id="email", size=32) }}
         </div>
-        <div>
-            {{ form.password.label }}
-            {{ form.password(size=32) }}
+    </div>
+    <div class="mb-3 row">
+        {{ form.password.label(for="password", class="col-sm-2 col-form-label") }}
+        <div class="col-sm-auto">
+            {{ form.password(class="form-control", id="password", size=32) }}
         </div>
-        <div>
-            {{ form.remember() }}
-            {{ form.remember.label }}
+    </div>
+    <div class="mb-3 row">
+        <div class="col-sm-10 offset-sm-2">
+            <div class="form-check">
+                {{ form.remember(class="form-check-input", id="remember") }}
+                {{ form.remember.label(for="remember", class="form-check-label") }}
+            </div>
         </div>
-        <div>
-            {{ form.submit() }}
+    </div>
+    <div class="mb-3 row">
+        <div class="col-sm-10 offset-sm-2">
+            {{ form.submit(class="btn btn-primary") }}
         </div>
-
+    </div>
 </form>
-
 {% endblock %}

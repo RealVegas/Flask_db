@@ -1,9 +1,43 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 
 {% block title %}
 Аккаунт
 {% endblock %}
 
 {% block content %}
-<h1>Это страница вашего аккаунта</h1>
+<p class="page-title">Это страница вашего аккаунта</p>
+<p class="page-text">Здесь вы можете изменить свои данные</p>
+<form method="post" action="{{ url_for('account') }}">
+    {{ form.hidden_tag() }}
+    <div class="mb-3 row">
+        {{ form.username.label(for="username", class="col-sm-2 col-form-label") }}
+        <div class="col-sm-auto">
+            {{ form.username(class="form-control", id="username", size=32, value=current_user.username) }}
+        </div>
+    </div>
+    <div class="mb-3 row">
+        {{ form.email.label(for="email", class="col-sm-2 col-form-label") }}
+        <div class="col-sm-auto">
+            {{ form.email(class="form-control", id="email", size=32, value=current_user.email) }}
+        </div>
+    </div>
+    <div class="mb-3 row">
+        {{ form.password.label(for="password", class="col-sm-2 col-form-label") }}
+        <div class="col-sm-auto">
+            {{ form.password(class="form-control", id="password", size=32) }}
+        </div>
+    </div>
+    <div class="mb-3 row">
+        {{ form.confirm_password.label(for="confirm_password", class="col-sm-2 col-form-label") }}
+        <div class="col-sm-auto">
+            {{ form.confirm_password(class="form-control", id="confirm_password", size=32) }}
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <div class="d-grid gap-2 d-md-block col-sm-5 offset-sm-2">
+            {{ form.submit(class="btn btn-primary") }}
+            {{ form.not_submit(class="btn btn-primary") }}
+        </div>
+    </div>
+</form>
 {% endblock %}

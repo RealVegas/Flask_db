@@ -1,0 +1,42 @@
+.navbar-brand{
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    font-style: normal;
+}
+.nav-link{
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: normal;
+}
+.col-form-label{
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    color: #505050;
+}
+.form-check-label{
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    color: #505050;
+}
+.page-title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    font-style: normal;
+    color: #505050;
+}
+.page-text{
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    color: #505050;
+}

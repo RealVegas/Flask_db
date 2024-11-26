@@ -1,13 +1,13 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 
 {% block title %}
-Главная
+Домашняя
 {% endblock %}
 
 {% block content %}
-    <h1>Добро пожаловать на домашнюю страницу!</h1>
+    <p class="page-title">Добро пожаловать на домашнюю страницу!</p>
     {% if current_user.is_authenticated %}
-        <h3>Ваше имя: {{ current_user.username }}</h3>
-        <h3>Ваша эл. почта: {{ current_user.email }}</h3>
+        <p class="page-text">Ваше имя: {{ current_user.username }}<br>
+        Ваша эл. почта: {{ current_user.email }}</p>
     {% endif %}
 {% endblock %}
